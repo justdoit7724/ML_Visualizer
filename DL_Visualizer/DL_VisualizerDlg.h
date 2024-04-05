@@ -78,6 +78,8 @@ private:
 	CComboBox m_cAlpha;
 	CEdit m_cEpoch;
 	CComboBox m_cInput;
+	CComboBox m_cbWeights;
+	CListBox m_lbWeights;
 
 	OperatingStep m_step;
 	int m_nLayer;
@@ -96,4 +98,5 @@ public:
 	afx_msg void OnBnClickedButtonStop();
 	afx_msg void INPUT_SELCHANGE();
 	afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
+	afx_msg void CBWEIGHTS_SELCHANGE();
 };

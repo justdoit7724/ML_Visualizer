@@ -82,6 +82,8 @@ void CDLVisualizerDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMBO_ALPHA, m_cAlpha);
 	DDX_Control(pDX, IDC_EDIT_EPOCH, m_cEpoch);
 	DDX_Control(pDX, IDC_COMBO_INPUT, m_cInput);
+	DDX_Control(pDX, IDC_COMBO_WEIGHTS, m_cbWeights);
+	DDX_Control(pDX, IDC_LIST_WEIGHTS, m_lbWeights);
 	
 
 }
@@ -101,6 +103,7 @@ BEGIN_MESSAGE_MAP(CDLVisualizerDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_STOP, &CDLVisualizerDlg::OnBnClickedButtonStop)
 	ON_CBN_SELCHANGE(IDC_COMBO_INPUT, &CDLVisualizerDlg::INPUT_SELCHANGE)
 	ON_WM_MOUSEWHEEL()
+	ON_CBN_SELCHANGE(IDC_COMBO_WEIGHTS, &CDLVisualizerDlg::CBWEIGHTS_SELCHANGE)
 END_MESSAGE_MAP()
 
 
@@ -277,61 +280,6 @@ BOOL CDLVisualizerDlg::OnInitDialog()
 
 	OnBnClickedButtonStop();
 
-	//debug
-	/*
-	 {
-		auto ip = new IP_Radius({ 0,0,0 }, { 5,5,5 }, 100,true);
-		ML::NeuralNetwork* rnn = new ML::NeuralNetwork();
-
-		ML::Matrix x = ip->GetData();
-		ML::Matrix y = ip->GetLabel();
-		x.clear();
-		y.clear();
-
-		x.push_back({ 0.85,1.1,1 });
-		x.push_back({ 0.9,1.1,12 });
-		x.push_back({ 0.8,1.1 ,0.9});
-		x.push_back({ 0.9,0.9,1.2 });
-		x.push_back({ 0.9,0.85,1.05 });
-		x.push_back({ 0.1,-0.1,0.1 });
-		x.push_back({ 0,0,0 });
-		x.push_back({ 0.05,-.1,0 });
-		x.push_back({ 0.3,0,0 });
-		x.push_back({ 0,0.2,0 });
-		x.push_back({ 4,-0.3,0.2 });
-		x.push_back({ 4,0,0.1 });
-		x.push_back({ 3.05,.1,0 });
-		x.push_back({ 4.3,-.2,0.4 });
-		x.push_back({ 5,0.25,0 });
-		y.push_back({ 0 });
-		y.push_back({ 0 });
-		y.push_back({ 0 });
-		y.push_back({ 0 });
-		y.push_back({ 0 });
-		y.push_back({ 1 });
-		y.push_back({ 1 });
-		y.push_back({ 1 });
-		y.push_back({ 1 });
-		y.push_back({ 1 });
-		y.push_back({ 2 });
-		y.push_back({ 2 });
-		y.push_back({ 2 });
-		y.push_back({ 2 });
-		y.push_back({ 2 });
-		rnn->Compile({ {ML::ActKind::Logistic,3},{ML::ActKind::Logistic,3},{ML::ActKind::Linear,1} }, ML::LossKind::MeanSqure, x, y, 1000, false);
-		auto hist= rnn->Train(1.0e-0);
-		auto pred = rnn->Predict(x);
-
-		auto last = hist.back();
-		MessageBoxA(nullptr, ML::ToString(pred).c_str() , "", MB_OK);
-		ML::Matrix w1,w2;
-		ML::Vector b;
-		rnn->GetWeights(0, w1, b);
-		rnn->GetWeights(1, w2, b);
-		std::string str = ML::ToString(w1) + "\n\n" + ML::ToString(w2);
-		MessageBoxA(nullptr, str.c_str(), "", MB_OK);
-
-	}*/
 
 	return TRUE;  
 }
@@ -422,6 +370,17 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 			m_3Input->m_camAngleY = m_3Output->m_camAngleY;
 		}
 
+		//Weights
+		switch (m_step)
+		{
+		case OperatingStep::Work:
+		{
+			CBWEIGHTS_SELCHANGE();
+		}
+		break;
+		}
+
+
 		//UI activating
 		switch (m_step)
 		{
@@ -438,6 +397,7 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 			m_loss->EnableWindow();
 			m_cEpoch.EnableWindow();
 			m_cAlpha.EnableWindow();
+			m_cInput.EnableWindow();
 			break;
 		case OperatingStep::Work:
 		{
@@ -454,6 +414,7 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 			m_loss->EnableWindow(false);
 			m_cEpoch.EnableWindow(false);
 			m_cAlpha.EnableWindow(false);
+			m_cInput.EnableWindow(false);
 		}
 		break;
 		case OperatingStep::Pause:
@@ -469,6 +430,7 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 			m_loss->EnableWindow(false);
 			m_cEpoch.EnableWindow(false);
 			m_cAlpha.EnableWindow(false);
+			m_cInput.EnableWindow(false);
 			break;
 		default:
 			break;
@@ -492,7 +454,7 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 					m_hist.push_back(hist[i]);
 				}
 #ifdef NDEBUG
-				const int refreshMax = 12000;
+				const int refreshMax = 16000;
 #else
 				const int refreshMax = 3000;
 #endif
@@ -533,9 +495,7 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 			static bool slice1 = true;
 			slice1 = !slice1;
 
-			m_2HorSlice->Clear();
-			m_2VerSlice->Clear();
-			float res = 20;
+			float res = 40;
 			auto origin = m_ip->GetMinPt();
 			auto size = m_ip->GetMaxPt();
 			size.x -= origin.x;
@@ -547,6 +507,7 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 			std::vector<std::vector<float>> surY;
 			std::vector<std::vector<DirectX::XMFLOAT4>> surV;
 			if (slice1) {
+				m_2HorSlice->ClearSurface();
 				float y = size.y * (m_objInputHor->GetTransform()->GetPos().y - m_3Input->GetOrigin().y) / m_3Input->GetPlotSize().y;
 				for (int z = 0; z <= res; ++z)
 				{
@@ -588,16 +549,17 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 			}
 			else
 			{
+				m_2VerSlice->ClearSurface();
 				surX.clear();
 				surY.clear();
 				surV.clear();
 				xInput.clear();
 				float x = size.x * (m_objInputVer->GetTransform()->GetPos().x - m_3Input->GetOrigin().x) / m_3Input->GetPlotSize().x;
-				for (int z = 0; z <= res; ++z)
+				for (int y = 0; y <= res; ++y)
 				{
 					std::vector<float> lineX;
 					std::vector<float> lineY;
-					for (int y = 0; y <= res; ++y)
+					for (int z = 0; z <= res; ++z)
 					{
 						auto pt = origin;
 						pt.x += x;
@@ -605,8 +567,8 @@ void CDLVisualizerDlg::OnTimer(UINT_PTR nIDEvent)
 						pt.z += (z / res) * size.z;
 
 						xInput.push_back({ pt.x, pt.y,pt.z });
-						lineX.push_back(pt.y);
-						lineY.push_back(pt.z);
+						lineX.push_back(pt.z);
+						lineY.push_back(pt.y);
 					}
 					surX.push_back(lineX);
 					surY.push_back(lineY);
@@ -845,6 +807,9 @@ void CDLVisualizerDlg::OnBnClickedButtonLayerNumber()
 		m_layersAct[i]->SetWindowPos(nullptr, groupRC.left+25, groupRC.top + i * interval, 90, actRC.bottom - actRC.top, 0);
 		m_layersNum[i]->SetWindowPos(nullptr, groupRC.left+130, groupRC.top + i * interval, 40, 30, 0);
 	}
+
+	m_cNLayer.SetWindowTextW(std::to_wstring(m_nLayer).c_str());
+	UpdateData();
 }
 
 void CDLVisualizerDlg::OnBnClickedButtonStart()
@@ -899,6 +864,13 @@ void CDLVisualizerDlg::OnBnClickedButtonStart()
 			MessageBox(L"Output layer", L"Layer violation");
 			return;
 		}
+
+		m_cbWeights.ResetContent();
+		for (int i = 0; i < m_nLayer; ++i)
+		{
+			m_cbWeights.AddString(std::to_wstring(i+1).c_str());
+		}
+		m_cbWeights.SetCurSel(0);
 
 		auto strLoss = GetText(m_loss);
 		ML::LossKind loss;
@@ -968,7 +940,7 @@ void CDLVisualizerDlg::INPUT_SELCHANGE()
 	}
 	else if (selInput == "Block")
 	{
-		m_ip = new IP_Uniform({ -2.5,-2.5,-2.5 }, { 2.5,2.5,2.5 }, 8,8);
+		m_ip = new IP_Uniform({ 0,0,0 }, { 5,5,5 }, 8,8);
 	}
 
 	if (m_ip)
@@ -1049,4 +1021,35 @@ BOOL CDLVisualizerDlg::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt)
 
 
 	return CDialogEx::OnMouseWheel(nFlags, zDelta, pt);
+}
+
+
+void CDLVisualizerDlg::CBWEIGHTS_SELCHANGE()
+{
+	int iLayer = atoi(GetText(&m_cbWeights).c_str());
+	if (iLayer >= 0)
+	{
+		m_lbWeights.ResetContent();
+
+		ML::Matrix w;
+		ML::Vector b;
+		m_dl->GetWeights(m_cbWeights.GetCurSel(), w, b);
+
+		int width = 0;
+		m_lbWeights.AddString(L"Weight");
+		for (int i = 0; i < w.size(); ++i)
+		{
+			auto strW = ML::ToString(w[i]);
+			m_lbWeights.AddString(std::wstring(strW.begin(), strW.end()).c_str());
+			width = max(width, strW.size() * 10);
+		}
+
+		auto strB = ML::ToString(b);
+		m_lbWeights.AddString(L"Bias");
+		m_lbWeights.AddString(std::wstring(strB.begin(), strB.end()).c_str());
+		width = max(width, strB.size() * 10);
+
+		m_lbWeights.SetHorizontalExtent(width);
+
+	}
 }

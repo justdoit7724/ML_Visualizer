@@ -83,3 +83,10 @@ ML::Matrix MT_DL::GetPredict(ML::Matrix x)
 
 	return m_RNNPred->Predict(x);
 }
+
+void MT_DL::GetWeights(int iLayer, ML::Matrix& w, ML::Vector& b)
+{
+	const std::unique_lock<std::mutex> lock(m_mutexTrain);
+
+	m_RNNPred->GetWeights(iLayer, w, b);
+}

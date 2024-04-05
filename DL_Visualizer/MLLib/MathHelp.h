@@ -44,7 +44,7 @@ namespace ML {
 	Matrix Zeros(int m, int n, double v=0);
 	Matrix Zeros(const Matrix& m, double v = 0);
 	
-
-	std::string ToString(const Matrix& m);
+	std::string ToString(const Vector& v, int fracCount=2);
+	std::string ToString(const Matrix& m, int fracCount = 2);
 }
 #endif

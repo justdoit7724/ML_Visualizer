@@ -15,6 +15,7 @@ public:
 	void EnableTraining(bool enable);
 	std::vector<double> GetHist();
 	ML::Matrix GetPredict(ML::Matrix x);
+	void GetWeights(int iLayer, ML::Matrix& w, ML::Vector& b);
 
 private:
 
