@@ -1,0 +1,6 @@
+
+
+Text render
+			std::wstring str = std::to_wstring(dist) + L"\n";
+			SetDlgItemText(IDC_STATIC, str.c_str());
+
