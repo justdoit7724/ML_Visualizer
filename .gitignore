@@ -15,10 +15,13 @@
 # Build results
 *.tlog
 *.idb
-x64/
+*.res
+*.exe.recipe
+*.txt
+*.zip
+
 
 *.exp
-*.exe
 bld/
 [Oo]bj/
 [Ll]og/
