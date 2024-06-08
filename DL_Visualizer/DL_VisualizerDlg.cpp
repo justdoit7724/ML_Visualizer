@@ -10,14 +10,13 @@
 #include "DL_VisualizerDlg.h"
 #include "afxdialogex.h"
 
-#include "DXLib/Object.h"
-#include "DXLib/Transform.h"
-#include "DXLib/Mesh.h"
-#include "DXLib/Collider.h"
-#include "DXLib/Camera.h"
-#include "DXLib/SphereMesh.h"
-#include "DXLib/Text.h"
-#include "MLLib/LogisticRegression.h"
+#include "DXObject.h"
+#include "DXTransform.h"
+#include "DXMesh.h"
+#include "DXCollider.h"
+#include "DXCamera.h"
+#include "DXSphereMesh.h"
+#include "MLLogisticRegression.h"
 
 #include "IP_Simple.h"
 #include "IP_Uniform.h"
@@ -172,7 +171,6 @@ BOOL CDLVisualizerDlg::OnInitDialog()
 	m_2HorSlice = new DX::Plot2DGraphic(GetDlgItem(IDC_STATIC_PLOT_SLICE_HOR)->m_hWnd);
 	
 	m_2loss = new DX::Plot2DGraphic(GetDlgItem(IDC_STATIC_PLOT_LOSS)->m_hWnd);
-	m_2loss->EnableXUnit(false);
 
 
 	DX::Actor* tmp;
@@ -277,6 +275,8 @@ BOOL CDLVisualizerDlg::OnInitDialog()
 	}
 	m_cAlpha.SetCurSel(5);
 	SetText(&m_cEpoch, "1");
+
+	
 
 	OnBnClickedButtonStop();
 
@@ -1026,7 +1026,7 @@ BOOL CDLVisualizerDlg::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt)
 
 void CDLVisualizerDlg::CBWEIGHTS_SELCHANGE()
 {
-	int iLayer = atoi(GetText(&m_cbWeights).c_str());
+	/*int iLayer = atoi(GetText(&m_cbWeights).c_str());
 	if (iLayer >= 0)
 	{
 		m_lbWeights.ResetContent();
@@ -1039,17 +1039,17 @@ void CDLVisualizerDlg::CBWEIGHTS_SELCHANGE()
 		m_lbWeights.AddString(L"Weight");
 		for (int i = 0; i < w.size(); ++i)
 		{
-			auto strW = ML::ToString(w[i]);
+			auto strW = ToString(w[i]);
 			m_lbWeights.AddString(std::wstring(strW.begin(), strW.end()).c_str());
 			width = max(width, strW.size() * 10);
 		}
 
-		auto strB = ML::ToString(b);
+		auto strB = ToString(b);
 		m_lbWeights.AddString(L"Bias");
 		m_lbWeights.AddString(std::wstring(strB.begin(), strB.end()).c_str());
 		width = max(width, strB.size() * 10);
 
 		m_lbWeights.SetHorizontalExtent(width);
 
-	}
+	}*/
 }

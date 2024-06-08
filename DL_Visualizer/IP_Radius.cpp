@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "IP_Radius.h"
-#include "DXLib/MathHelper.h"
+#include "DXMathHelper.h"
 
 IP_Radius::IP_Radius(DirectX::XMFLOAT3 origin, DirectX::XMFLOAT3 size, int num)
 	:InputPoints(origin, size,3)

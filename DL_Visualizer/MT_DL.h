@@ -2,7 +2,7 @@
 #include <thread>
 #include <mutex>
 #include <queue>
-#include "MLLib/NeuralNetwork.h"
+#include "MLNeuralNetwork.h"
 #include "InputPoints.h"
 
 class MT_DL

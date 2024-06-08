@@ -1,11 +1,10 @@
 ﻿
 #pragma once
 
-#include "DXLib/DXLibExport.h"
-#include "DXLib/Plot3DGraphic.h"
-#include "DXLib/WorldGraphic.h"
-#include "DXLib/Plot2DGraphic.h"
-#include "MLLib/NeuralNetwork.h"
+#include "DXPlot3DGraphic.h"
+#include "DXWorldGraphic.h"
+#include "DXPlot2DGraphic.h"
+#include "MLNeuralNetwork.h"
 #include "MT_DL.h"
 #include "InputPoints.h"
 
@@ -57,7 +56,7 @@ private:
 	DX::Plot2DGraphic* m_2loss;
 	DX::Graphic* m_curFocus;
 	DirectX::XMFLOAT2 m_focusPt;
-	
+	 
 	DX::Object* m_objInputVer;
 	DX::Object* m_objInputHor;
 	DX::Object* m_objOutputVer;

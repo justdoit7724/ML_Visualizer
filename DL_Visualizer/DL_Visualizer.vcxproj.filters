@@ -16,6 +16,12 @@
     <Filter Include="Input">
       <UniqueIdentifier>{283d8d72-c8d6-4421-b3b1-eb6d6d956b09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DXLib">
+      <UniqueIdentifier>{263071c7-dfc8-43f3-a8b1-bd71fe2365b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MLLib">
+      <UniqueIdentifier>{075e49fe-ef36-4030-8bad-8a5584319609}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DL_Visualizer.h">
@@ -51,6 +57,201 @@
     <ClInclude Include="IP_Uniform.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="DXActor.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXAlgorithm.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXBlendState.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXBuffer.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXCamera.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXCircleMesh.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXCollider.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXComponent.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXCubeCollider.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXCubeMesh.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXCustomSTL.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXCylinderMesh.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXDepthStencilState.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXFactoryComponent.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXframework.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGeometrics.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGraphic.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXLayerMask.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXLight.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXLineMesh.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXLogMgr.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXMathHelper.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXMesh.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXNetwork.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXObject.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXObjectObsInfo.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXObjectPool.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXObserverDP.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXPhysic.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXPlot2DGraphic.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXPlot3DGraphic.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXPostProcessing.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXQuadCollider.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXQuadMesh.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXRasterizerState.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXShader.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXShaderFormat.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXShaderReg.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXSphereCollider.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXSphereMesh.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXTransform.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXTurnController.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUtility.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXVertex.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="DXWorldGraphic.h">
+      <Filter>DXLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLActivation.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLBinaryCrossEntropy.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLCategoricalCrossEntropy.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLFactoryAct.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLFactoryLoss.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLInfo.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLLayer.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLLinearAct.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLLinearRegression.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLLogisticAct.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLLogisticRegression.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLLoss.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLMathHelp.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLMeanSqauredError.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLNeuralNetwork.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLNormalizer.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLRegression.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLReluAct.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLSoftmaxAct.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MLTimer.h">
+      <Filter>MLLib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DL_Visualizer.cpp">
@@ -77,6 +278,165 @@
     <ClCompile Include="IP_Uniform.cpp">
       <Filter>Input</Filter>
     </ClCompile>
+    <ClCompile Include="DXActor.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXBlendState.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXBuffer.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXCamera.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXCircleMesh.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXCollider.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXComponent.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXCubeCollider.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXCubeMesh.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXCustomSTL.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXCylinderMesh.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXDepthStencilState.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXFactoryComponent.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGeometrics.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGraphic.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXLight.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXLineMesh.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXLogMgr.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXMathHelper.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXMesh.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXObject.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXPhysic.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXPlot2DGraphic.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXPlot3DGraphic.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXPostProcessing.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXQuadCollider.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXQuadMesh.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXRasterizerState.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXShader.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXSphereCollider.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXSphereMesh.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXTransform.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXVertex.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="DXWorldGraphic.cpp">
+      <Filter>DXLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLActivation.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLBinaryCrossEntropy.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLCategoricalCrossEntropy.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLFactoryAct.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLFactoryLoss.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLLayer.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLLinearAct.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLLinearRegression.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLLogisticAct.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLLogisticRegression.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLLoss.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLMathHelp.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLMeanSqauredError.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLNeuralNetwork.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLNormalizer.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLRegression.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLReluAct.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLSoftmaxAct.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MLTimer.cpp">
+      <Filter>MLLib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DLVisualizer.rc">
@@ -87,6 +447,45 @@
     <None Include="res\DLVisualizer.rc2">
       <Filter>리소스 파일</Filter>
     </None>
+    <None Include="DXGeometrics.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderCM.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderInfo.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderLight.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderNormal.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderReg.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderSampAniso.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderSampCmpLinearPoint.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderSampCmpPoint.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderSampLinear.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderSampLinearPoint.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderSampPoint.cginc">
+      <Filter>DXLib</Filter>
+    </None>
+    <None Include="DXShaderVertex.cginc">
+      <Filter>DXLib</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\DL_Visualizer.ico">
@@ -95,5 +494,16 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Note.txt" />
+    <Text Include="DXGPGPU.txt">
+      <Filter>DXLib</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="DXStdPS.hlsl">
+      <Filter>DXLib</Filter>
+    </FxCompile>
+    <FxCompile Include="DXStdVS.hlsl">
+      <Filter>DXLib</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

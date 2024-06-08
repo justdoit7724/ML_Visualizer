@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(OutDir);</AdditionalLibraryDirectories>
-      <AdditionalDependencies>MLLib.lib;DXLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -174,7 +174,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(OutDir);</AdditionalLibraryDirectories>
-      <AdditionalDependencies>MLLib.lib;DXLib.lib;</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -190,11 +191,76 @@
   <ItemGroup>
     <ClInclude Include="DL_Visualizer.h" />
     <ClInclude Include="DL_VisualizerDlg.h" />
+    <ClInclude Include="DXActor.h" />
+    <ClInclude Include="DXAlgorithm.h" />
+    <ClInclude Include="DXBlendState.h" />
+    <ClInclude Include="DXBuffer.h" />
+    <ClInclude Include="DXCamera.h" />
+    <ClInclude Include="DXCircleMesh.h" />
+    <ClInclude Include="DXCollider.h" />
+    <ClInclude Include="DXComponent.h" />
+    <ClInclude Include="DXCubeCollider.h" />
+    <ClInclude Include="DXCubeMesh.h" />
+    <ClInclude Include="DXCustomSTL.h" />
+    <ClInclude Include="DXCylinderMesh.h" />
+    <ClInclude Include="DXDepthStencilState.h" />
+    <ClInclude Include="DXFactoryComponent.h" />
+    <ClInclude Include="DXframework.h" />
+    <ClInclude Include="DXGeometrics.h" />
+    <ClInclude Include="DXGraphic.h" />
+    <ClInclude Include="DXLayerMask.h" />
+    <ClInclude Include="DXLight.h" />
+    <ClInclude Include="DXLineMesh.h" />
+    <ClInclude Include="DXLogMgr.h" />
+    <ClInclude Include="DXMathHelper.h" />
+    <ClInclude Include="DXMesh.h" />
+    <ClInclude Include="DXNetwork.h" />
+    <ClInclude Include="DXObject.h" />
+    <ClInclude Include="DXObjectObsInfo.h" />
+    <ClInclude Include="DXObjectPool.h" />
+    <ClInclude Include="DXObserverDP.h" />
+    <ClInclude Include="DXPhysic.h" />
+    <ClInclude Include="DXPlot2DGraphic.h" />
+    <ClInclude Include="DXPlot3DGraphic.h" />
+    <ClInclude Include="DXPostProcessing.h" />
+    <ClInclude Include="DXQuadCollider.h" />
+    <ClInclude Include="DXQuadMesh.h" />
+    <ClInclude Include="DXRasterizerState.h" />
+    <ClInclude Include="DXShader.h" />
+    <ClInclude Include="DXShaderFormat.h" />
+    <ClInclude Include="DXShaderReg.h" />
+    <ClInclude Include="DXSphereCollider.h" />
+    <ClInclude Include="DXSphereMesh.h" />
+    <ClInclude Include="DXTransform.h" />
+    <ClInclude Include="DXTurnController.h" />
+    <ClInclude Include="DXUtility.h" />
+    <ClInclude Include="DXVertex.h" />
+    <ClInclude Include="DXWorldGraphic.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="InputPoints.h" />
     <ClInclude Include="IP_Radius.h" />
     <ClInclude Include="IP_Simple.h" />
     <ClInclude Include="IP_Uniform.h" />
+    <ClInclude Include="MLActivation.h" />
+    <ClInclude Include="MLBinaryCrossEntropy.h" />
+    <ClInclude Include="MLCategoricalCrossEntropy.h" />
+    <ClInclude Include="MLFactoryAct.h" />
+    <ClInclude Include="MLFactoryLoss.h" />
+    <ClInclude Include="MLInfo.h" />
+    <ClInclude Include="MLLayer.h" />
+    <ClInclude Include="MLLinearAct.h" />
+    <ClInclude Include="MLLinearRegression.h" />
+    <ClInclude Include="MLLogisticAct.h" />
+    <ClInclude Include="MLLogisticRegression.h" />
+    <ClInclude Include="MLLoss.h" />
+    <ClInclude Include="MLMathHelp.h" />
+    <ClInclude Include="MLMeanSqauredError.h" />
+    <ClInclude Include="MLNeuralNetwork.h" />
+    <ClInclude Include="MLNormalizer.h" />
+    <ClInclude Include="MLRegression.h" />
+    <ClInclude Include="MLReluAct.h" />
+    <ClInclude Include="MLSoftmaxAct.h" />
+    <ClInclude Include="MLTimer.h" />
     <ClInclude Include="MT_DL.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -203,10 +269,63 @@
   <ItemGroup>
     <ClCompile Include="DL_Visualizer.cpp" />
     <ClCompile Include="DL_VisualizerDlg.cpp" />
+    <ClCompile Include="DXActor.cpp" />
+    <ClCompile Include="DXBlendState.cpp" />
+    <ClCompile Include="DXBuffer.cpp" />
+    <ClCompile Include="DXCamera.cpp" />
+    <ClCompile Include="DXCircleMesh.cpp" />
+    <ClCompile Include="DXCollider.cpp" />
+    <ClCompile Include="DXComponent.cpp" />
+    <ClCompile Include="DXCubeCollider.cpp" />
+    <ClCompile Include="DXCubeMesh.cpp" />
+    <ClCompile Include="DXCustomSTL.cpp" />
+    <ClCompile Include="DXCylinderMesh.cpp" />
+    <ClCompile Include="DXDepthStencilState.cpp" />
+    <ClCompile Include="DXFactoryComponent.cpp" />
+    <ClCompile Include="DXGeometrics.cpp" />
+    <ClCompile Include="DXGraphic.cpp" />
+    <ClCompile Include="DXLight.cpp" />
+    <ClCompile Include="DXLineMesh.cpp" />
+    <ClCompile Include="DXLogMgr.cpp" />
+    <ClCompile Include="DXMathHelper.cpp" />
+    <ClCompile Include="DXMesh.cpp" />
+    <ClCompile Include="DXObject.cpp" />
+    <ClCompile Include="DXPhysic.cpp" />
+    <ClCompile Include="DXPlot2DGraphic.cpp" />
+    <ClCompile Include="DXPlot3DGraphic.cpp" />
+    <ClCompile Include="DXPostProcessing.cpp" />
+    <ClCompile Include="DXQuadCollider.cpp" />
+    <ClCompile Include="DXQuadMesh.cpp" />
+    <ClCompile Include="DXRasterizerState.cpp" />
+    <ClCompile Include="DXShader.cpp" />
+    <ClCompile Include="DXSphereCollider.cpp" />
+    <ClCompile Include="DXSphereMesh.cpp" />
+    <ClCompile Include="DXTransform.cpp" />
+    <ClCompile Include="DXVertex.cpp" />
+    <ClCompile Include="DXWorldGraphic.cpp" />
     <ClCompile Include="InputPoints.cpp" />
     <ClCompile Include="IP_Radius.cpp" />
     <ClCompile Include="IP_Simple.cpp" />
     <ClCompile Include="IP_Uniform.cpp" />
+    <ClCompile Include="MLActivation.cpp" />
+    <ClCompile Include="MLBinaryCrossEntropy.cpp" />
+    <ClCompile Include="MLCategoricalCrossEntropy.cpp" />
+    <ClCompile Include="MLFactoryAct.cpp" />
+    <ClCompile Include="MLFactoryLoss.cpp" />
+    <ClCompile Include="MLLayer.cpp" />
+    <ClCompile Include="MLLinearAct.cpp" />
+    <ClCompile Include="MLLinearRegression.cpp" />
+    <ClCompile Include="MLLogisticAct.cpp" />
+    <ClCompile Include="MLLogisticRegression.cpp" />
+    <ClCompile Include="MLLoss.cpp" />
+    <ClCompile Include="MLMathHelp.cpp" />
+    <ClCompile Include="MLMeanSqauredError.cpp" />
+    <ClCompile Include="MLNeuralNetwork.cpp" />
+    <ClCompile Include="MLNormalizer.cpp" />
+    <ClCompile Include="MLRegression.cpp" />
+    <ClCompile Include="MLReluAct.cpp" />
+    <ClCompile Include="MLSoftmaxAct.cpp" />
+    <ClCompile Include="MLTimer.cpp" />
     <ClCompile Include="MT_DL.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -219,13 +338,41 @@
     <ResourceCompile Include="DLVisualizer.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DXGeometrics.cginc" />
+    <None Include="DXShaderCM.cginc" />
+    <None Include="DXShaderInfo.cginc" />
+    <None Include="DXShaderLight.cginc" />
+    <None Include="DXShaderNormal.cginc" />
+    <None Include="DXShaderReg.cginc" />
+    <None Include="DXShaderSampAniso.cginc" />
+    <None Include="DXShaderSampCmpLinearPoint.cginc" />
+    <None Include="DXShaderSampCmpPoint.cginc" />
+    <None Include="DXShaderSampLinear.cginc" />
+    <None Include="DXShaderSampLinearPoint.cginc" />
+    <None Include="DXShaderSampPoint.cginc" />
+    <None Include="DXShaderVertex.cginc" />
     <None Include="res\DLVisualizer.rc2" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\DL_Visualizer.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="DXGPGPU.txt" />
     <Text Include="Note.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="DXStdPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="DXStdVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,9 +1,8 @@
 #pragma once
 #include <DirectXMath.h>
 #include <vector>
-#include "DXLib/DXLibExport.h"
-#include "DXLib/MathHelper.h"
-#include "MLLib/MathHelp.h"
+#include "DXMathHelper.h"
+#include "MLMathHelp.h"
 
 class InputPoints
 {
